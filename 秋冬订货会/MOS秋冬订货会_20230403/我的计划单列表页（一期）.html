@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>我的计划单列表页（一期）</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/我的计划单列表页（一期）/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/我的计划单列表页（一期）/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (矩形) -->
+      <div id="u884" class="ax_default label">
+        <div id="u884_div" class=""></div>
+        <div id="u884_text" class="text ">
+          <p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">一、数据来源</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">订货会购物车提交和自动生成</span></p><ul><li style=""><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">若专场为非首铺专场，则来源购物车提交</span></li><li style=""><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">若专场为首铺专场，当专场进行中，则自动对所有参与账号生成一张计划单</span></li></ul><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">二、查询（保持现状）</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">支持计划单号、专场名称、门店编码/名称、商品编码/名称的查询</span></p><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">计划单号：精确</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">专场名称：模糊</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">门店编码/名称：编码精确，名称模糊</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">商品编码/名称：编码精确，名称模糊</span></li></ul><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">三、列表页</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">字段优化</span></p><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">计划单号：规则改为为PLCN+提交账号编码+YYYYMMDD+2位流水号</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">当前状态：{“已确认”、“待确认”}</span></li><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">已确认：若计划单已提交，则状态为“待确认”</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">待确认：若系统自动生成，则默认为待确认；若确认完毕，则状态为已确认</span></li></ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">创建时间：购物车提交或系统自动创建时间，YYYY-MM-DD HH:MM:SS</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">实际订货总量：若状态为“已确认”，则汇总当前计划单实际订货总数量；若状态为“待确认”，则为0</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">实际订货总金额：若状态为“已确认”，则汇总当前计划单实际订货数量*零售价加总；若状态为“待确认”，则为0</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">专场名称：若购物车提交，则显示购物车提交时，sku所在专场名称；若系统自动生成，则来源于ISCM同步专场ID的名称</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">操作：</span></li><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">若状态为“已确认”，则查看该计划单的明细</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">若状态为“待确认”且为首铺专场，则显示“调整计划单”</span></li></ul></ul><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">四、查看明细</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">点击“查看明细”，弹窗显示当前计划单的明细</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">若从购物车提交的计划单，则无需展示门店编码和门店名称</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">若从计划单确认的计划单，则保持现状</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">五、调整计划单</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">点击“调整计划单”，则跳转至调整计划单页面，原型见“调整计划单”<br>当计划单调整完毕后，“当前状态=已确认”，“操作=查看明细”</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">六、导出计划单</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">字段包括<br>计划单号&nbsp; &nbsp;&nbsp; 大区名称&nbsp; &nbsp;&nbsp; 当前状态&nbsp; &nbsp;&nbsp; 创建人&nbsp; &nbsp;&nbsp; 创建时间&nbsp; &nbsp;&nbsp; 商品个数&nbsp; &nbsp;&nbsp; 建议订货总量&nbsp; &nbsp;&nbsp; </span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">建议订货总金额&nbsp; &nbsp;&nbsp; 实际订货总量&nbsp; &nbsp;&nbsp; 实际订货总金额&nbsp; &nbsp;&nbsp; 专场名称&nbsp; &nbsp;&nbsp; 最新审核人&nbsp; &nbsp;&nbsp; 最新审核时间</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">七、导出计划单明细</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">字段包括<br></span><span style="font-family:'宋体 常规', '宋体';font-weight:400;">&nbsp;&nbsp; 计划单号、专场名称、门店编码、门店名称、仓库编码、一级区域、二级区域、省份、城市、门店面积、 门店销售等级<br>&nbsp;&nbsp; 大类名称、中类名称、小类名称、细类名称、细类上市时间、 产品组合套餐、陈列版面、单店首铺量、细类单店订货量<br>&nbsp;&nbsp; 去年细类销售量、细类订货比例、商品编码、商品名称、 零售价、预计回货时间、建议订货量、建议订货金额、<br>&nbsp;&nbsp; 实际订货量、实际订货金额</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片 ) -->
+      <div id="u885" class="ax_default _图片_">
+        <img id="u885_img" class="img " src="images/我的计划单列表页（一期）/u885.png"/>
+        <div id="u885_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (表格) -->
+      <div id="u886" class="ax_default">
+
+        <!-- Unnamed (单元格) -->
+        <div id="u887" class="ax_default table_cell">
+          <img id="u887_img" class="img " src="images/我的计划单列表页（一期）/u887.png"/>
+          <div id="u887_text" class="text ">
+            <p><span>计划单号</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u888" class="ax_default table_cell">
+          <img id="u888_img" class="img " src="images/我的计划单列表页（一期）/u888.png"/>
+          <div id="u888_text" class="text ">
+            <p><span>当前状态</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u889" class="ax_default table_cell">
+          <img id="u889_img" class="img " src="images/我的计划单列表页（一期）/u889.png"/>
+          <div id="u889_text" class="text ">
+            <p><span>创建时间</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u890" class="ax_default table_cell">
+          <img id="u890_img" class="img " src="images/我的计划单列表页（一期）/u890.png"/>
+          <div id="u890_text" class="text ">
+            <p><span>商品个数</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u891" class="ax_default table_cell">
+          <img id="u891_img" class="img " src="images/我的计划单列表页（一期）/u891.png"/>
+          <div id="u891_text" class="text ">
+            <p><span>建议订货总量</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u892" class="ax_default table_cell">
+          <img id="u892_img" class="img " src="images/我的计划单列表页（一期）/u892.png"/>
+          <div id="u892_text" class="text ">
+            <p><span>建议订货总金额</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u893" class="ax_default table_cell">
+          <img id="u893_img" class="img " src="images/我的计划单列表页（一期）/u893.png"/>
+          <div id="u893_text" class="text ">
+            <p><span>实际订货总量</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u894" class="ax_default table_cell">
+          <img id="u894_img" class="img " src="images/我的计划单列表页（一期）/u894.png"/>
+          <div id="u894_text" class="text ">
+            <p><span>实际订货总金额</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u895" class="ax_default table_cell">
+          <img id="u895_img" class="img " src="images/我的计划单列表页（一期）/u895.png"/>
+          <div id="u895_text" class="text ">
+            <p><span>专场名称</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u896" class="ax_default table_cell">
+          <img id="u896_img" class="img " src="images/我的计划单列表页（一期）/u896.png"/>
+          <div id="u896_text" class="text ">
+            <p><span>PLCNDB002023032701</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u897" class="ax_default table_cell">
+          <img id="u897_img" class="img " src="images/我的计划单列表页（一期）/u897.png"/>
+          <div id="u897_text" class="text ">
+            <p><span>已确认</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u898" class="ax_default table_cell">
+          <img id="u898_img" class="img " src="images/我的计划单列表页（一期）/u898.png"/>
+          <div id="u898_text" class="text ">
+            <p><span>2023-03010 10:33:22</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u899" class="ax_default table_cell">
+          <img id="u899_img" class="img " src="images/我的计划单列表页（一期）/u899.png"/>
+          <div id="u899_text" class="text ">
+            <p><span>4</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u900" class="ax_default table_cell">
+          <img id="u900_img" class="img " src="images/我的计划单列表页（一期）/u900.png"/>
+          <div id="u900_text" class="text ">
+            <p><span>10</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u901" class="ax_default table_cell">
+          <img id="u901_img" class="img " src="images/我的计划单列表页（一期）/u901.png"/>
+          <div id="u901_text" class="text ">
+            <p><span>450</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u902" class="ax_default table_cell">
+          <img id="u902_img" class="img " src="images/我的计划单列表页（一期）/u902.png"/>
+          <div id="u902_text" class="text ">
+            <p><span>70</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u903" class="ax_default table_cell">
+          <img id="u903_img" class="img " src="images/我的计划单列表页（一期）/u903.png"/>
+          <div id="u903_text" class="text ">
+            <p><span>500.00</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u904" class="ax_default table_cell">
+          <img id="u904_img" class="img " src="images/我的计划单列表页（一期）/u904.png"/>
+          <div id="u904_text" class="text ">
+            <p><span>测试1122</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u905" class="ax_default table_cell">
+          <img id="u905_img" class="img " src="images/我的计划单列表页（一期）/u905.png"/>
+          <div id="u905_text" class="text ">
+            <p><span>PLCNDB002023032702</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u906" class="ax_default table_cell">
+          <img id="u906_img" class="img " src="images/我的计划单列表页（一期）/u906.png"/>
+          <div id="u906_text" class="text ">
+            <p><span>待确认</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u907" class="ax_default table_cell">
+          <img id="u907_img" class="img " src="images/我的计划单列表页（一期）/u907.png"/>
+          <div id="u907_text" class="text ">
+            <p><span>2023-03010 10:33:22</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u908" class="ax_default table_cell">
+          <img id="u908_img" class="img " src="images/我的计划单列表页（一期）/u908.png"/>
+          <div id="u908_text" class="text ">
+            <p><span>4</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u909" class="ax_default table_cell">
+          <img id="u909_img" class="img " src="images/我的计划单列表页（一期）/u909.png"/>
+          <div id="u909_text" class="text ">
+            <p><span>20</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u910" class="ax_default table_cell">
+          <img id="u910_img" class="img " src="images/我的计划单列表页（一期）/u910.png"/>
+          <div id="u910_text" class="text ">
+            <p><span>470</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u911" class="ax_default table_cell">
+          <img id="u911_img" class="img " src="images/我的计划单列表页（一期）/u911.png"/>
+          <div id="u911_text" class="text ">
+            <p><span>0</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u912" class="ax_default table_cell">
+          <img id="u912_img" class="img " src="images/我的计划单列表页（一期）/u912.png"/>
+          <div id="u912_text" class="text ">
+            <p><span>0</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u913" class="ax_default table_cell">
+          <img id="u913_img" class="img " src="images/我的计划单列表页（一期）/u913.png"/>
+          <div id="u913_text" class="text ">
+            <p><span>测试1122</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u914" class="ax_default box_1">
+        <img id="u914_img" class="img " src="images/我的计划单列表页（一期）/u914.svg"/>
+        <div id="u914_text" class="text ">
+          <p><span style="text-decoration:underline ;color:#D9001B;">调整计划单</span><span>&nbsp; </span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u915" class="ax_default box_1">
+        <img id="u915_img" class="img " src="images/我的计划单列表页（一期）/u915.svg"/>
+        <div id="u915_text" class="text ">
+          <p><span style="text-decoration:underline ;">查看明细</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (连接) -->
+      <div id="u916" class="ax_default _连接">
+        <img id="u916_seg0" class="img " src="images/我的计划单列表页（一期）/u916_seg0.svg" alt="u916_seg0"/>
+        <img id="u916_seg1" class="img " src="images/我的计划单列表页（一期）/u916_seg1.svg" alt="u916_seg1"/>
+        <img id="u916_seg2" class="img " src="images/我的计划单列表页（一期）/u916_seg2.svg" alt="u916_seg2"/>
+        <div id="u916_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u917" class="ax_default box_1">
+        <img id="u917_img" class="img " src="images/我的计划单列表页（一期）/u917.svg"/>
+        <div id="u917_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u918" class="ax_default box_1">
+        <img id="u918_img" class="img " src="images/我的计划单列表页（一期）/u918.svg"/>
+        <div id="u918_text" class="text ">
+          <p><span style="text-decoration:underline ;">查看明细</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片 ) -->
+      <div id="u919" class="ax_default _图片_">
+        <img id="u919_img" class="img " src="images/我的计划单列表页（一期）/u919.png"/>
+        <div id="u919_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u920" class="ax_default sticky_1">
+        <div id="u920_div" class=""></div>
+        <div id="u920_text" class="text ">
+          <p><span>1</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u921" class="ax_default sticky_1">
+        <div id="u921_div" class=""></div>
+        <div id="u921_text" class="text ">
+          <p><span>2</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u922" class="ax_default sticky_1">
+        <div id="u922_div" class=""></div>
+        <div id="u922_text" class="text ">
+          <p><span>3</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u923" class="ax_default sticky_1">
+        <div id="u923_div" class=""></div>
+        <div id="u923_text" class="text ">
+          <p><span>4</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u924" class="ax_default _文本段落">
+        <div id="u924_div" class=""></div>
+        <div id="u924_text" class="text ">
+          <p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">一、列表</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">1、默认展示该大区账号下所有门店的数据，展示字段</span></p><ul><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">门店编码：MOS门店主数据</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">门店名称：MOS门店主数据</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">商品编码：MOS商品主数据</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">商品名称：MOS商品主数据</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">细类名称：MOS商品主数据</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">零售价：MOS商品主数据</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;color:#D9001B;">预计回货时间：</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">建议订货金额：建议订货量*零售价</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">实际订货量：该计划单内数据</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">实际订货金额：该计划单内数据</span></li></ul></ul><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">2、点击“导出计划单明细”，导出字段如下：</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">&nbsp;&nbsp; 计划单号、专场名称、门店编码、门店名称、仓库编码、一级区域、二级区域、省份、城市、门店面积、 门店销售等级<br>&nbsp;&nbsp; 大类名称、中类名称、小类名称、细类名称、细类上市时间、 产品组合套餐、陈列版面、单店首铺量、细类单店订货量<br>&nbsp;&nbsp; 去年细类销售量、细类订货比例、商品编码、商品名称、 零售价、预计回货时间、建议订货量、建议订货金额、<br>&nbsp;&nbsp; 实际订货量、实际订货金额</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">二、查询和重置</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">1、支持根据门店编码/名称、商品编码/名称进行查询</span></p><ul><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">门店编码/名称：编码精确，名称模糊；支持多门店编码精确查询，用“；”或分行隔开</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">商品编码/名称：编码精确，名称模糊；支持多商品编码精确查询，用“；”或分行隔开</span></li></ul></ul><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">2、点击“重置”，清空所有查询条件，列表刷新为无查询状态时的默认展示场景</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">三、该基础信息</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">1、展示字段</span></p><ul><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">计划单号：该计划单的单号</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">当前状态：{“已确认”、“待确认”}</span></li><ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">待确认：系统自动生成，默认为待确认；</span></li><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">已确认：确认完毕，则状态为已确认</span></li></ul><li style=""><span style="font-family:'宋体 常规', '宋体';font-weight:400;">专场名称：当前专场的名称</span></li></ul></ul><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">四、确定</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;">点击确定，关闭弹窗</span></p><p><span style="font-family:'宋体 常规', '宋体';font-weight:400;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u925" class="ax_default button">
+        <div id="u925_div" class=""></div>
+        <div id="u925_text" class="text ">
+          <p><span>确定</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (表格) -->
+      <div id="u926" class="ax_default">
+
+        <!-- Unnamed (单元格) -->
+        <div id="u927" class="ax_default table_cell">
+          <img id="u927_img" class="img " src="images/我的计划单列表页（一期）/u905.png"/>
+          <div id="u927_text" class="text ">
+            <p><span>PLCNDB002023032702</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u928" class="ax_default table_cell">
+          <img id="u928_img" class="img " src="images/我的计划单列表页（一期）/u906.png"/>
+          <div id="u928_text" class="text ">
+            <p><span>已确认</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u929" class="ax_default table_cell">
+          <img id="u929_img" class="img " src="images/我的计划单列表页（一期）/u907.png"/>
+          <div id="u929_text" class="text ">
+            <p><span>2023-03010 10:33:22</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u930" class="ax_default table_cell">
+          <img id="u930_img" class="img " src="images/我的计划单列表页（一期）/u908.png"/>
+          <div id="u930_text" class="text ">
+            <p><span>4</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u931" class="ax_default table_cell">
+          <img id="u931_img" class="img " src="images/我的计划单列表页（一期）/u909.png"/>
+          <div id="u931_text" class="text ">
+            <p><span>20</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u932" class="ax_default table_cell">
+          <img id="u932_img" class="img " src="images/我的计划单列表页（一期）/u910.png"/>
+          <div id="u932_text" class="text ">
+            <p><span>470</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u933" class="ax_default table_cell">
+          <img id="u933_img" class="img " src="images/我的计划单列表页（一期）/u911.png"/>
+          <div id="u933_text" class="text ">
+            <p><span>0</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u934" class="ax_default table_cell">
+          <img id="u934_img" class="img " src="images/我的计划单列表页（一期）/u912.png"/>
+          <div id="u934_text" class="text ">
+            <p><span>0</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单元格) -->
+        <div id="u935" class="ax_default table_cell">
+          <img id="u935_img" class="img " src="images/我的计划单列表页（一期）/u913.png"/>
+          <div id="u935_text" class="text ">
+            <p><span>测试1122</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (连接) -->
+      <div id="u936" class="ax_default _连接">
+        <img id="u936_seg0" class="img " src="images/我的计划单列表页（一期）/u936_seg0.svg" alt="u936_seg0"/>
+        <img id="u936_seg1" class="img " src="images/我的计划单列表页（一期）/u936_seg1.svg" alt="u936_seg1"/>
+        <img id="u936_seg2" class="img " src="images/我的计划单列表页（一期）/u936_seg2.svg" alt="u936_seg2"/>
+        <div id="u936_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u937" class="ax_default box_1">
+        <div id="u937_div" class=""></div>
+        <div id="u937_text" class="text ">
+          <p><span>跳转至调整计划单页面</span></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>
